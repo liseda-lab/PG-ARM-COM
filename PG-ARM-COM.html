@@ -56,7 +56,7 @@
           <li class="dropdown"><a href="#strategy"><span>Methods</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#data">Data</a></li>
-              <li><a href="#PPIprediction">Protein-Protein Interaction Prediction</a></li>
+              <li><a href="#scale">Manual evaluation scale</a></li>
             </ul>
           </li>
 		  <li><a class="nav-link scrollto" href="#results">Results</a></li>
@@ -140,26 +140,22 @@
 
           <div class="col-lg-6">
             <p style="text-align: justify;">
-            As machine learning is increasingly being used, concerns about data leakage have been raised.
+              Ontology Alignment is an essential tool for interoperability and semantic data integration, but most works in the field are restricted to finding simple correspondences.
 			</p>
 			<p style="text-align: justify;">
-			<a href="https://arxiv.org/abs/2003.08001" >Leakage</a>  occurs when information about the target of a data mining problem that should not be legitimately available to mine from is introduced,
-			and it can lead to overestimation of the model’s performance. 
-			In biomedical applications, such as protein-protein interaction (PPI) prediction, data leakage can also be an issue since multiple databases and resources reuse the same sources of information.  
+			  Existing <a href="http://ceur-ws.org/Vol-2536/oaei19_paper3.pdf">lexical-based approaches</a> are limited to finding complex mappings where there is a lexical similarity between the entities, which is often not the case in real-world ontologies.  
             </p>
           </div>
 
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p style="text-align: justify;">
-            The majority of PPI prediction methods that are based on knowledge graphs (KGs) explore the Gene Ontology (GO) KG, composed of the <a href="http://geneontology.org/" >GO</a> and 
-			<a href="http://geneontology.org/docs/go-annotations/">GO annotations</a>. 
-			Since GO annotations can be based on the automated processing of other data sources, the same information that is used to support a PPI in a 
-			<a href="https://string-db.org/cgi/input?sessionId=bHnvrRHPzilD&input_page_show_search=on">database</a> to 
-			also be used to establish a GO annotation for the proteins.
+              Existing <a href="http://ceur-ws.org/Vol-2788/oaei20_paper4.pdf">traditional Association Rule Mining based approaches </a> have a catch-all philosophy, exhaustively searching for frequent patterns and using predefined complex alignment patterns to filter the results a posteriori.
 			</p>
 			<p style="text-align: justify;">
-			We investigated potential data leakage between the GO KG and the STRING database in the task of PPI prediction, 
-			by comparing performance on unseen interactions.
+          We propose novel pattern mining based algorithms for targeted complex ontology alignment, where patterns are used <i>a priori</i>, to allow for a targeted Association Rule Mining process, which we have found to be:
+          <ol>
+            <li>more <b>effective</b>, as we optimise the search and selection of each pattern</li>
+            <li>more <b>efficient</b>, as we reduce the search space</li>
             </p>
           </div>
 
@@ -167,192 +163,72 @@
 
       </div>
   </section><!-- End About Section -->
-
-
-
-<!-- ======= Data Section ======= -->
-  <section id="data" class="services section-bg">
+  
+<!-- ======= Methods Section ======= -->
+  <section id="scale" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Knowledge Graphs and Data Resources</h2>
-          <div class="row justify-content-center">
-            <div class="col-8" >
-              <span> PPI prediction is cast as a classification task that takes as input the GO KG and a set of protein pairs.
-					The first step of our approach is using historical data to build the PPI datasets.   
-					Then we use the GO KG and the protein pairs to predict interactions using several machine learning algorithms. 
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              
-			  <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bi bi-diagram-3"></i>
-              </div>
-			  
-              <h4><a href="">Gene Ontology Knowledge Graph</a></h4>
-			  <p>
-              <a href="http://geneontology.org/" >GO</a> describes protein function with respect to three semantic aspects: biological processes, cellular components, and molecular functions. 
-              GO and the annotations that link proteins to GO classes make up a KG.
-              We obtained archived versions of the GO and GO annotations in 2015, 2017 and 2019 from the <a href=http://release.geneontology.org/ >GO Data Archive</a>.
-			  </p>
-              
-			  <p> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#GOKG"> See GO KG <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a> </p>
-                <div id="GOKG" class="collapse">
-                  <img src="assets/img/GO.png" class="img-fluid" alt="" style="padding-top:20px" width="550" height="550">
-                </div>
-				
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-yellow">
-              
-			  <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bi bi-server"></i> 
-              </div>
-              
-			  <h4><a href="">Protein-Protein Interaction Datasets</a></h4>
-              <p> 
-			  The PPI datasets were obtained from the <a href=https://string-db.org >STRING Database</a>, one of the largest available 
-			  PPI databases. 
-			  We built several PPI datasets using three archived versions of the STRING database (v9.1, v10, and v10.5) and the current version (v11). 
-			  For the current version, we created three datasets each excluding protein pairs present in each of the older versions.
-			  </p>
-			  
-              <p> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#PPIdatasets"> See the number of interactions in each version of the STRING database <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a> </p>
-                
-				<div id="PPIdatasets" class="collapse">
-				
-				  <style>
-		            #table_datasets{
-		              padding-top: 25px; 
-					  padding-bottom: 25px; 
-		            }
-                  </style>
-				
-                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                  <script type="text/javascript">
-                  google.charts.load('current', {'packages':['table']});
-                  google.charts.setOnLoadCallback(drawTable);
-                  function drawTable() {
-                  var data = new google.visualization.DataTable();
-                  data.addColumn('string', 'STRING version');
-                  data.addColumn('string', 'Date');
-                  data.addColumn('number', 'Positive pairs');
-                  data.addRows([
-                  ['v9.1', '04/2015', 12681],
-                  ['v10', '05/2017', 26863],
-                  ['v10.5', '01/2019', 31384],
-                  ['v11 (excluding pairs in v9.1)', '10/2020', 41227],
-                  ['v11 (excluding pairs in v10)', '10/2020', 31642],
-                  ['v11 (excluding pairs in v10.5)', '10/2020', 23571]
-                  ]);
-                  var table = new google.visualization.Table(document.getElementById('table_datasets'));
-                  table.draw(data, {showRowNumber: false, width: '70%', height: '100%'});}
-                  </script>
-				
-                  <div id="table_datasets"></div>
-				
-				  <p style="text-align: justify;"> We considered the following criteria to select protein pairs from STRING:</p> 
-				  <p style="text-align: justify;"> (i) each protein must be annotated with the GO;</p> 
-				  <p style="text-align: justify;"> (ii) protein interactions must be experimentally determined or from curated databases;</p> 
-				  <p style="text-align: justify;"> (iii) interactions must have a confidence score above 950 to retain only high confidence interactions.</p> 
-				  <p style="text-align: justify;"> We employed random sampling to create negative pairs composed of the human proteins present in the positive pairs but without any STRING interactions 
-				  between them, building a balanced dataset. </p> 
-				
-				</div>
-			  
-            </div>
-			
-          </div>
-
-        </div>
-
-      </div>
-  </section><!-- End Evaluation Section -->
-  
-  
-  
-<!-- ======= PPI Prediction Section ======= -->
-  <section id="PPIprediction" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Protein-Protein Interaction Prediction</h2>
+          <h2>Methods</h2>
           <div class="row justify-content-center">
             <div class="col-8" >
 			 <span> 
-			 We follow the setup in <a href="https://openreview.net/pdf/c1c08929d05e8424a472d8b1e5d837a02e5ea6ae.pdf">evoKGsim+</a>, available on <a href="https://github.com/liseda-lab/evoKGsim" >GitHub</a>, that predicts relations 
-			 between KG entity pairs that are not encoded in the graph using similarity-based semantic representations. 
+			 text 
 			 </span>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-			  <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bi bi-ui-checks"></i>
-              </div>
-			  <h4><a href="">Similarity Computation</a></h4>
-              <p  style="text-align: justify;"> Employ three KG-based semantic similarity measures to compute semantic similarity:
-			  (i) two taxonomic measures (<a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/project/jair/pub/volume11/resnik99a.pdf" >ResnikMax</a>, <a href="https://webpages.ciencias.ulisboa.pt/~fjcouto/files/workshop%20cpesquita-ismb2007.pdf" >SimGIC</a>) combined with <a href="https://www.researchgate.net/profile/Jer-Hayes/publication/220837848_An_Intrinsic_Information_Content_Metric_for_Semantic_Similarity_in_WordNet/links/0fcfd50a2122fa6910000000/An-Intrinsic-Information-Content-Metric-for-Semantic-Similarity-in-WordNet.pdf" >ICSeco</a> approach;
-			  (ii) one based on graph embedding methods (<a href="https://madoc.bib.uni-mannheim.de/41307/1/Ristoski_RDF2Vec.pdf" >RDF2Vec</a>).
-			  </p>		
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bi bi-ui-checks"></i>
-              </div>
-			  <h4><a href="">Supervised Learning</a></h4>
-              <p style="text-align: justify;"> Apply six well-known classes of machine learning models to train classifiers: 
-			  <a href="https://ieeexplore.ieee.org/abstract/document/1053964" >K-Nearest Neighbor</a> (KNN);
-			  <a href="https://link.springer.com/chapter/10.1007/0-387-28356-0_5" >Genetic Programming</a> (GP);
-			  <a href="https://academic.oup.com/biomet/article-abstract/85/2/363/298822" >Decision Tree</a> (DT);
-			  <a href="https://dl.acm.org/doi/abs/10.1145/2939672.2939785" >XGBoost</a> (XGB);
-			  <a href="https://link.springer.com/article/10.1023/a:1010933404324" >Random Forest</a> (RF);
-			  <a href="https://www.nature.com/articles/323533a0" >Multi-Layer Perceptron</a> (MLP).
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-orange">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bi bi-ui-checks"></i>
-              </div>
-			  <h4><a href="">Performance Evaluation</a></h4>
-              <p style="text-align: justify;"> For evaluating the quality of a predicted classification, the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" >Weighted Average F-measure</a> (WAF) was used for stratified 10-fold cross-validation. The values ​​reported are the WAFs median.</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
+    </div>
+          <style>
+            .container {
+              position: relative;
+              width: 50%;
+            }
+            
+            .image {
+              opacity: 1;
+              display: block;
+              width: 100%;
+              height: auto;
+              transition: .5s ease;
+              backface-visibility: hidden;
+            }
+            
+            .middle {
+              transition: .5s ease;
+              opacity: 0;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              text-align: center;
+            }
+            
+            .container:hover .image {
+              opacity: 0.3;
+            }
+            
+            .container:hover .middle {
+              opacity: 1;
+            }
+            
+            .text {
+              background-color: #04AA6D;
+              color: white;
+              font-size: 16px;
+              padding: 16px 32px;
+            }
+            </style>
+
+<div class="container">
+  <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="150%">
+  <div class="middle">
+    <div class="text">An initial ontology loading step retrieves the set of shared individuals between the two ontologies and organises the ontology information (types, re- lations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) in hash-tables.</div>
+  </div>
+</div>
+
+
   </section><!-- End Methodology Section -->
 
 
@@ -601,6 +477,44 @@
         </div>  
 
       </div> 
+
+      <div class="row" >
+        <div class="row justify-content-center">
+          <div class="col-8" >
+        <div id="boxplot_div"></div>
+          </div>
+    </div>
+  
+    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-base.min.js"></script>
+        <style type="text/css">
+          #boxplot_div{
+          width:  100%;
+          height: 650px;
+          margin: 0;
+          padding-top: 20px;
+      }
+        </style>
+       
+      <script>
+        anychart.onDocumentReady(function () {
+        // create data
+        var data = [
+        {x: "January", value: 10000},
+        {x: "February", value: 12000},
+        {x: "March", value: 18000},
+        {x: "April", value: 11000},
+        {x: "May", value: 9000}];
+
+        // create a chart
+        chart = anychart.stick();
+
+        // create a stick series and set the data
+        var series = chart.stick(data);
+        chart.draw();
+        }
+      </script>  
+</div>  
+
   </section><!-- End Results Section -->
 
 
