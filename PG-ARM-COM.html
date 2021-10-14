@@ -76,11 +76,12 @@
 
 <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="200">
 
       <div class="row justify-content-center">
         <div class="col-xl-12 col-lg-12 text-center">
-          <h1>Pattern-Guided Association Rule Mining for Complex Ontology Alignment </h1>
+          <h1>Pattern-Guided Association Rule Mining </h1>
+          <h1>for Complex Ontology Alignment </h1>
           <h2>Beatriz Lima, Daniel Faria, Catia Pesquita</h2>
           <p>LASIGE, Faculdade de Ciências, Universidade de Lisboa</p>
         </div>
@@ -95,7 +96,7 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
 			<center> 
-			  <h3 class="title">Biomedical knowledge graphs share, reuse and import data from each other routinely... </h4>
+			  <h3 class="title">Biomedical knowledge graphs share, reuse and import data from each other routinely... </h3>
 			  <img src="assets/img/Interoperability.png" class="img-fluid" alt="" width="350" height="350"> 
 			 </center>
           </div>
@@ -126,8 +127,6 @@
 
 <main id="main">
 
-
-
 <!-- ======= About Section ======= -->
   <section id="motivation" class="about">
       <div class="container" data-aos="fade-up">
@@ -139,99 +138,52 @@
         <div class="row content">
 
           <div class="col-lg-6">
-            <p style="text-align: justify;">
-              Ontology Alignment is an essential tool for interoperability and semantic data integration, but most works in the field are restricted to finding simple correspondences.
-			</p>
-			<p style="text-align: justify;">
-			  Existing <a href="http://ceur-ws.org/Vol-2536/oaei19_paper3.pdf">lexical-based approaches</a> are limited to finding complex mappings where there is a lexical similarity between the entities, which is often not the case in real-world ontologies.  
-            </p>
+            <p style="text-align: justify;"> Ontology Alignment is an essential tool for interoperability and semantic data integration, but most works in the field are restricted to finding simple correspondences.</p>
+			      <p style="text-align: justify;"> Existing <a href="http://ceur-ws.org/Vol-2536/oaei19_paper3.pdf">lexical-based approaches</a> are limited to finding complex mappings where there is a lexical similarity between the entities, which is often not the case in real-world ontologies.</p>
           </div>
 
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p style="text-align: justify;">
-              Existing <a href="http://ceur-ws.org/Vol-2788/oaei20_paper4.pdf">traditional Association Rule Mining based approaches </a> have a catch-all philosophy, exhaustively searching for frequent patterns and using predefined complex alignment patterns to filter the results a posteriori.
-			</p>
-			<p style="text-align: justify;">
-          We propose novel pattern mining based algorithms for targeted complex ontology alignment, where patterns are used <i>a priori</i>, to allow for a targeted Association Rule Mining process, which we have found to be:
-          <ol>
-            <li>more <b>effective</b>, as we optimise the search and selection of each pattern</li>
-            <li>more <b>efficient</b>, as we reduce the search space</li>
+            <p style="text-align: justify;"> Existing <a href="http://ceur-ws.org/Vol-2788/oaei20_paper4.pdf">traditional Association Rule Mining based approaches </a> have a catch-all philosophy, exhaustively searching for frequent patterns and using predefined complex alignment patterns to filter the results a posteriori.</p>
+			      <p style="text-align: justify;"> We propose novel pattern mining based algorithms for targeted complex ontology alignment, where patterns are used <i>a priori</i>, to allow for a targeted Association Rule Mining process, which we have found to be:
+              <ol>
+              <li>more <b>effective</b>, as we optimise the search and selection of each pattern</li>
+              <li>more <b>efficient</b>, as we reduce the search space</li></ol>
             </p>
           </div>
-
         </div>
-
       </div>
   </section><!-- End About Section -->
   
 <!-- ======= Methods Section ======= -->
-  <section id="scale" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Methods</h2>
-          <div class="row justify-content-center">
-            <div class="col-8" >
-			 <span> 
-			 text 
-			 </span>
-            </div>
+  <section id="methods" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Methods</h2>
+        <div class="row justify-content-center">
+          <div class="col-8" >
+			      <span> text </span>
           </div>
+        </div>
+      </div>
+      <div class="row content mycontainer">
+        <img src="assets/img/pipeline.png" class="mimage" width="100%">
+        <div class="mmiddle1">
+          <div class="mtext1">An initial ontology loading step retrieves the set of shared individuals between the two ontologies and organises the ontology information (types, relations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) in hash-tables.</div>
+        </div>
+        <div class="mmiddle2">
+          <div class="mtext2">For each complex alignment pattern, an individual pattern matching algorithm iterates through the set of shared individuals, and, for each individual, it searches the hash-table data structures containing the relevant data for the targeted alignment pattern. For each mapping candidate found, 
+            we increment the support (i.e., the frequency) of the source and target entities in the mapping and the support of the mapping itself (i.e., the fraction of shared individuals that have both the source and target entities).</div>
+        </div>
+        <div class="mmiddle3">
+          <div class="mtext3"></div>
+        </div>
+        <div class="mmiddle4">
+          <div class="mtext4">Filtering algorithms select which of the candidate mappings to include in the final alignment, 
+            excluding redundant mappings and conflicting mappings with lower confidence. An aggregator algorithm combines mappings for the same entity into a single mapping using logical operators, such as “AND” and “OR”. </div>
+        </div>
       </div>
     </div>
-          <style>
-            .container {
-              position: relative;
-              width: 50%;
-            }
-            
-            .image {
-              opacity: 1;
-              display: block;
-              width: 100%;
-              height: auto;
-              transition: .5s ease;
-              backface-visibility: hidden;
-            }
-            
-            .middle {
-              transition: .5s ease;
-              opacity: 0;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              -ms-transform: translate(-50%, -50%);
-              text-align: center;
-            }
-            
-            .container:hover .image {
-              opacity: 0.3;
-            }
-            
-            .container:hover .middle {
-              opacity: 1;
-            }
-            
-            .text {
-              background-color: #04AA6D;
-              color: white;
-              font-size: 16px;
-              padding: 16px 32px;
-            }
-            </style>
-
-<div class="container">
-  <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="150%">
-  <div class="middle">
-    <div class="text">An initial ontology loading step retrieves the set of shared individuals between the two ontologies and organises the ontology information (types, re- lations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) in hash-tables.</div>
-  </div>
-</div>
-
-
   </section><!-- End Methodology Section -->
-
-
 
 <!-- ======= Results Section ======= -->
   <section id="results" class="results">

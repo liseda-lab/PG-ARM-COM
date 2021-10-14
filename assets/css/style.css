@@ -1885,3 +1885,94 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+.mimage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.mmiddle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 37%;
+  left: 2%;
+  width: 45%;
+  text-align: center;
+}
+.mmiddle2 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  width: 50%;
+  left:50%;
+  text-align: center;
+}
+.mmiddle3 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 73%;
+  width: 30%;
+  left:70%;
+  text-align: center;
+}
+.mmiddle4 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 77%;
+  width: 45%;
+  left:20%;
+  text-align: center;
+}
+
+.mycontainer:hover .mimage {
+  opacity: 0.3;
+}
+
+.mycontainer:hover .mmiddle1 {
+  opacity: 1;
+}
+.mycontainer:hover .mmiddle2 {
+  opacity: 1;
+}
+.mycontainer:hover .mmiddle3 {
+  opacity: 1;
+}
+.mycontainer:hover .mmiddle4 {
+  opacity: 1;
+}
+
+.mtext1 {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.mtext2 {
+  background-color: #ceebfd;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.mtext3 {
+  background-color: #ecf9ec;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.mtext4 {
+  background-color: #E6E6FA;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
