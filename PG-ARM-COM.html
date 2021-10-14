@@ -53,10 +53,11 @@
 
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#motivation">Motivation</a></li>
-          <li class="dropdown"><a href="#strategy"><span>Methods</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#methods"><span>Methods</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
+              <li><a href="#system">System</a></li>
               <li><a href="#data">Data</a></li>
-              <li><a href="#scale">Manual evaluation scale</a></li>
+              <li><a href="#scale">Manual Evaluation</a></li>
             </ul>
           </li>
 		  <li><a class="nav-link scrollto" href="#results">Results</a></li>
@@ -96,8 +97,8 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
 			<center> 
-			  <h3 class="title">Biomedical knowledge graphs share, reuse and import data from each other routinely... </h3>
-			  <img src="assets/img/Interoperability.png" class="img-fluid" alt="" width="350" height="350"> 
+			  <h3 class="title"> Conceptual differences between ontologies are often so profound ... </h3>
+			  <img src="assets/img/conceptual.jpeg" class="img-fluid" width="200" height="200"> 
 			 </center>
           </div>
         </div>
@@ -105,8 +106,8 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon-box">
 		    <center> 
-			  <h3 class="title"> ... This can be a potential source of <strong>data leakage</strong> for machine learning applications using these knowledge graphs, creating predictive models with overestimated performance values. </h3>
-			  <img src="assets/img/leakage.png" class="img-fluid" alt="" width="200" height="200"> 
+			  <h3 class="title"> ... That to ensure interoperability we need to establish complex correspondences such as: <br></br></h3>
+			  <img src="assets/img/complex.png" class="img-fluid" width="400" height="300"> 
 			</center>
           </div>
         </div>
@@ -114,8 +115,8 @@
         <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
           <div class="icon-box">
 		    <center> 
-			  <h3 class="title"> To investigate potential data leakage, we simulate a realistic training situation, where everything in the training set occurs before everything in the test set. </h3>
-			  <img src="assets/img/TemporalData.png" class="img-fluid" alt="" width="300" height="300"> 
+			  <h3 class="title"> We developed a targeted application of Association Rule Mining to find known complex alignment patterns.</h3>
+			  <img src="assets/img/complex_matching.png" class="img-fluid" alt="" width="200" height="200"> 
 			</center>
           </div>
         </div>
@@ -165,308 +166,71 @@
           </div>
         </div>
       </div>
+
+      <!-- ======= System ======= -->
       <div class="row content mycontainer">
-        <img src="assets/img/pipeline.png" class="mimage" width="100%">
+        <img src="assets/img/pipeline.png" class="mimage">
         <div class="mmiddle1">
-          <div class="mtext1">An initial ontology loading step retrieves the set of shared individuals between the two ontologies and organises the ontology information (types, relations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) in hash-tables.</div>
+          <div class="mtext1"> The loading step retrieves the set of shared individuals between the two ontologies and organises the ontology 
+            information (types, relations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) 
+            in hash-tables.</div>
         </div>
         <div class="mmiddle2">
-          <div class="mtext2">For each complex alignment pattern, an individual pattern matching algorithm iterates through the set of shared individuals, and, for each individual, it searches the hash-table data structures containing the relevant data for the targeted alignment pattern. For each mapping candidate found, 
-            we increment the support (i.e., the frequency) of the source and target entities in the mapping and the support of the mapping itself (i.e., the fraction of shared individuals that have both the source and target entities).</div>
+          <div class="mtext2"> There are individual matchers dedicated to each of the complex alignment patterns, which search the hash-table data structures containing the relevant data for the targeted alignment pattern. <br></br>
+          The support (or frequency) of the source and target entities that participate in the pattern are stored and a common Association Rule Mining matching algorithm is responsible for extracting association rules.
+          </div>
         </div>
         <div class="mmiddle3">
-          <div class="mtext3"></div>
+          <div class="mtext3">
+            Refinement algorithms receive mappings generated by some of the pattern matching algorithms as input and refine those mappings, converting simple subsumption mappings into complex equivalence ones.
+          </div>
         </div>
         <div class="mmiddle4">
           <div class="mtext4">Filtering algorithms select which of the candidate mappings to include in the final alignment, 
-            excluding redundant mappings and conflicting mappings with lower confidence. An aggregator algorithm combines mappings for the same entity into a single mapping using logical operators, such as “AND” and “OR”. </div>
+            excluding redundant mappings and conflicting mappings with lower confidence. <br></br>
+            An aggregator algorithm combines mappings for the same entity into a single mapping using logical operators, such as “AND” and “OR”. </div>
         </div>
-      </div>
+      </div> <!-- End System -->
+
+      <!-- ======= Data ======= -->
+
+
     </div>
   </section><!-- End Methodology Section -->
 
 <!-- ======= Results Section ======= -->
   <section id="results" class="results">
       <div class="container" data-aos="fade-up">
-		
         <div class="section-title">
           <h2> Results </h2>
           <div class="row justify-content-center">
             <div class="col-8" >
-              <span> We conducted two types of experiments: </span>
-			  <span> <strong>(i) Same version</strong>, where we train the model with randomly chosen 10 000 protein interacting pairs from the archived STRING version and test it with the remaining pairs;</span>
-			  <span> <strong>(ii) Future version</strong>, where we train the model with randomly chosen 10 000 protein pairs from the archived STRING version and test it on data from the current STRING version (excluding interactions present in the archived version).</span>
-			  <span> The same randomly chosen 10 000 protein pairs are used in both settings.</span>
+              <span> </span>
             </div>
           </div>
         </div>
-
-
-		<div class="row justify-content-center">
-          <div class="col-4">
-            <div id="classifierFilter_div"></div>
+        <div class="row content">
+          <div class="col-lg-6">
+            <img src="assets/img/results.png" class="img-fluid" width="100%">
           </div>
-          <div class="col-4">
-            <div id="ssmFilter_div"></div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <div class="faq-list">
+              <ul>
+                <li data-aos="fade-up">
+                  Our algorithms cover eight distinct complex patterns, from which seven were found in the <i>cmt-conference</i> dataset. 
+                </li>
+                <br></br>
+                <li data-aos="fade-up" data-aos-delay="100">
+                 They were unable to find mappings for some of the patterns present in the reference, however, they found several mappings for patterns not present in the reference with high weighted precision.
+                </li> <br></br>
+                <li data-aos="fade-up" data-aos-delay="200">
+                  These results show that the reference alignment is not exhaustive in all non­trivial correspondences that are valid between these two ontologies, suggesting that complex alignment references may be incomplete.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
-
-		<div class="row" >
-          <div class="row justify-content-center">
-            <div class="col-8" >
-              <div id="table_div"></div>
-            </div>
-          </div>
-		 
-          <style>
-           .cssSelectedTableRow {
-             font-size: 15px;
-             font-weight:bold;
-           }
-           .cssHeaderCell {
-             font-size: 15px;
-             border: solid 1px #FFFFFF;
-           }
-           .cssTableCell {
-             font-size: 15px;
-             border: solid 1px #FFFFFF;
-           }
-		   #table_div{
-             width:  1310px;
-             height: 380px;
-             margin: 0; 
-		   }
-          </style>
-
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-          <script type="text/javascript">
-          google.charts.load('current', {'packages':['corechart', 'table', 'controls']});
-          google.charts.setOnLoadCallback(drawMainDashboard);
-
-          function drawMainDashboard() {
-
-            var dashboard = new google.visualization.Dashboard(
-            document.getElementById('dashboard_div'));
-
-            var classifierFilter = new google.visualization.ControlWrapper({
-            'controlType': 'CategoryFilter',
-            'containerId': 'classifierFilter_div',
-            'options': {
-            'filterColumnIndex': 0,
-            'ui': {
-            'caption': 'All Classifiers',
-            'labelStacking': 'horizontal',
-            'label': 'Choose a classifier:',
-            'allowTyping': false,
-            'allowMultiple': false
-                  }
-                }
-             });
-
-            var ssmFilter = new google.visualization.ControlWrapper({
-            'controlType': 'CategoryFilter',
-            'containerId': 'ssmFilter_div',
-            'options': {
-            'filterColumnIndex': 1,
-            'ui': {
-            'caption': 'All Similarity Measures',
-            'labelStacking': 'horizontal',
-            'label': 'Choose a similarity measure:',
-            'allowTyping': false,
-            'allowMultiple': false
-                  }
-                },
-			'state': {'selectedValues': ['ResnikMax']}
-             });
-
-            var cssClassNames = {
-            'selectedTableRow': 'cssSelectedTableRow',
-            'headerCell': 'cssHeaderCell',
-            'tableCell': 'cssTableCell',
-            };
-
-            var table2 = new google.visualization.ChartWrapper({
-            'chartType': 'Table',
-            'containerId': 'table_div',
-            'options': {'width': '66%', 'height': 360, 'cssClassNames':cssClassNames},
-            });
-
-            var data2 = google.visualization.arrayToDataTable([
-            ['Classifier', 'Measure', 'Same version 01/19', 'Future version 01/19', 'Same version 05/17', 'Future version 05/17', 'Same version 04/15', 'Future version 04/15'],
-            ['KNN','ResnikMax',0.905,0.892,0.877,0.891,0.853,0.861],
-			['KNN','SimGIC',0.858,0.843,0.821,0.842,0.825,0.826],
-			['KNN','RDF2Vec',0.832,0.813,0.788,0.806,0.815,0.800],
-			['GP','ResnikMax',0.896,0.893,0.877,0.888,0.856,0.843],
-			['GP','SimGIC',0.873,0.855,0.835,0.859,0.835,0.842],
-			['GP','RDF2Vec',0.848,0.829,0.813,0.830,0.836,0.823],
-			['DT','ResnikMax',0.900,0.880,0.863,0.875,0.855,0.852],
-			['DT','SimGIC',0.815,0.800,0.768,0.788,0.767,0.772],
-			['DT','RDF2Vec',0.784,0.767,0.735,0.753,0.761,0.749],
-			['XGB','ResnikMax',0.920,0.903,0.887,0.906,0.874,0.880],
-			['XGB','SimGIC',0.873,0.858,0.839,0.860,0.834,0.846],
-			['XGB','RDF2Vec',0.851,0.830,0.812,0.831,0.837,0.821],
-			['RF','ResnikMax',0.912,0.902,0.885,0.902,0.867,0.880],
-			['RF','SimGIC',0.874,0.858,0.837,0.859,0.832,0.845],
-			['RF','RDF2Vec',0.851,0.830,0.813,0.831,0.838,0.822],
-			['MLP','ResnikMax',0.902,0.894,0.880,0.896,0.860,0.869],
-			['MLP','SimGIC',0.871,0.857,0.838,0.861,0.835,0.845],
-			['MLP','RDF2Vec',0.851,0.829,0.813,0.831,0.839,0.823]
-            ]);
-
-            dashboard.bind([classifierFilter, ssmFilter], [table2, table2]);
-            dashboard.draw(data2);
-            }
-
-          </script>
-		</div>
-
-
-        <div class="row" >
-          <div class="row justify-content-center">
-            <div class="col-8" >
-		      <div id="boxplot_div"></div>
-            </div>
-		  </div>
-		
-		  <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-base.min.js"></script>
-          <style type="text/css">
-            #boxplot_div{
-            width:  100%;
-            height: 650px;
-            margin: 0;
-            padding-top: 20px;
-		    }
-          </style>
-         
-	      <script>
-	  
-          anychart.onDocumentReady(function () {
-  
-          var data1 = [
-           {x:"All", low: 0.7351575811547773, q1: 0.8263387301741768, median: 0.8435610400845482, q3: 0.873324187080827, high: 0.9200569554545556},
-	       {x:"ResnikMax", low: 0.8529089402412717, q1: 0.8641606785509511, median: 0.8785665892934128, q3: 0.8987648994667123, high: 0.9200569554545556},
-	       {x:"SimGIC", low: 0.767201763369996, q1: 0.8264161960986258, median: 0.8349372308954044, q3: 0.8534712192662016, high: 0.8736131971487632},
-	       {x:"RDF2Vec", low: 0.7351575811547773, q1: 0.812410210596547, median: 0.8235578406987907, q3: 0.838720824680285, high: 0.8511243823303396}
-	       ];
-	      var data2 = [
-		   {x:"All", low: 0.7492308692542392, q1: 0.8268493070227108, median: 0.8451348587598732, q3: 0.8734398105265948, high: 0.9055119855369801},
-		   {x:"ResnikMax", low: 0.8431668013948673, q1: 0.8761689132536509, median: 0.8894993745799793, q3: 0.895724860181129, high: 0.9055119855369801},
-		   {x:"SimGIC", low: 0.7716923718444333, q1: 0.842251512018417, median: 0.8456474200394737, q3: 0.8582896394255981, high: 0.8605163598627782},
-		   {x:"RDF2Vec", low: 0.7492308692542392, q1: 0.8081330858289864, median: 0.8228167094531215, q3: 0.8299351396240823, high: 0.8314043962297505}
-	       ];
-
-	      var chart = anychart.box();
-
-	      series1 = chart.box(data1);
-	      series1.name("Same version");
-
-	      series1.normal().fill("#ff748c", 0.2);
-	      series1.hovered().fill("#ff748c", 0.2);
-	      series1.selected().fill("#ff748c", 0.6);
-	      series1.normal().stroke("#ff748c", 1);
-	      series1.hovered().stroke("#ff748c", 2);
-	      series1.selected().stroke("#ff748c", 4);
-	      series1.normal().medianStroke("#ff748c", 1);
-	      series1.hovered().medianStroke("#ff748c", 2);
-	      series1.selected().medianStroke("#ff748c", 2);
-	      series1.normal().stemStroke("#ff748c", 0.5);
-	      series1.hovered().stemStroke("#ff748c", 1);
-	      series1.selected().stemStroke("#ff748c", 2);
-	      series1.whiskerWidth(50);
-	      series1.normal().whiskerStroke("#ff748c", 0.5);
-	      series1.hovered().whiskerStroke("#ff748c", 1);
-	      series1.selected().whiskerStroke("#ff748c", 2);
-
-	      series2 = chart.box(data2);
-	      series2.name("Future version");
-
-	      series2.normal().fill("#0066cc", 0.2);
-	      series2.hovered().fill("#0066cc", 0.2);
-	      series2.selected().fill("#0066cc", 0.6);
-	      series2.normal().stroke("#0066cc", 1);
-	      series2.hovered().stroke("#0066cc", 2);
-	      series2.selected().stroke("#0066cc", 4);
-	      series2.normal().medianStroke("#0066cc", 1);
-	      series2.hovered().medianStroke("#0066cc", 2);
-	      series2.selected().medianStroke("#0066cc", 2);
-	      series2.normal().stemStroke("#0066cc", 0.5);
-	      series2.hovered().stemStroke("#0066cc", 1);
-	      series2.selected().stemStroke("#0066cc", 2);
-	      series2.whiskerWidth(50);
-	      series2.normal().whiskerStroke("#0066cc", 0.5);
-	      series2.hovered().whiskerStroke("#0066cc", 1);
-	      series2.selected().whiskerStroke("#0066cc", 2);
-
-	      chart.interactivity("by-x");
-	  
-	      var title = chart.title("Weighted Average F-measure Boxplot using the Same version and the Future version");
-	      chart.title().fontSize(16);
-	      chart.title().fontColor("#000000");	  
-	      chart.title().fontWeight("bold");
-
-	      chart.legend(true);
-	      chart.legend().fontSize(15);
-	      chart.legend().fontColor("#000000");	  
-          chart.legend().fontWeight("bold");	  	  
-	  
-	      chart.yAxis().title("Weighted Average F-measure");
-	      chart.yAxis().title().fontSize(15);
-	      chart.yAxis().title().fontColor("#000000");	  
-	 
-	      chart.xAxis().labels().fontColor("#000000");
-	      chart.xAxis().labels().fontSize(15);	
-
-	      chart.yAxis().labels().fontColor("#000000");
-	      chart.yAxis().labels().fontSize(15);
-	  
-	      chart.container("boxplot_div");
-	      chart.draw();
-	      });
-
-	      </script>  
-
-        </div>  
-
-      </div> 
-
-      <div class="row" >
-        <div class="row justify-content-center">
-          <div class="col-8" >
-        <div id="boxplot_div"></div>
-          </div>
-    </div>
-  
-    <script src="https://cdn.anychart.com/releases/8.8.0/js/anychart-base.min.js"></script>
-        <style type="text/css">
-          #boxplot_div{
-          width:  100%;
-          height: 650px;
-          margin: 0;
-          padding-top: 20px;
-      }
-        </style>
-       
-      <script>
-        anychart.onDocumentReady(function () {
-        // create data
-        var data = [
-        {x: "January", value: 10000},
-        {x: "February", value: 12000},
-        {x: "March", value: 18000},
-        {x: "April", value: 11000},
-        {x: "May", value: 9000}];
-
-        // create a chart
-        chart = anychart.stick();
-
-        // create a stick series and set the data
-        var series = chart.stick(data);
-        chart.draw();
-        }
-      </script>  
-</div>  
-
+      </div>
   </section><!-- End Results Section -->
 
 
