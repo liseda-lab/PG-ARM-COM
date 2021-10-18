@@ -44,7 +44,8 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html"></a></h1>
+      <!--<h1 class="logo"><a href="index.html"></a></h1>-->
+      <a class="logo"><img src="assets/img/logos/fculANDlasige.png" alt="" class="img-fluid"></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -80,7 +81,8 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-12 col-lg-12 text-center">
-          <h1>Pattern-Guided Association Rule Mining </h1>
+          <h1>Pattern-Guided </h1>
+          <h1> Association Rule Mining </h1>
           <h1>for Complex Ontology Alignment </h1>
           <h2>Beatriz Lima, Daniel Faria, Catia Pesquita</h2>
           <p>LASIGE, Faculdade de Ciências, Universidade de Lisboa</p>
@@ -98,7 +100,8 @@
 			<center> 
 			  <h3 class="title"> Conceptual differences between ontologies are often so profound ... </h3>
 			  <img src="assets/img/conceptual.jpeg" class="img-fluid" width="200" height="200"> 
-			 </center>
+        <div><font color="#d3d3d3" size="0.5"><a style="color: #d3d3d3" href="https://www.freeiconspng.com/img/11532">Png Compare Free Icon</a></font></div>
+        </center>
           </div>
         </div>
 
@@ -140,15 +143,27 @@
           <div class="col-lg-6">
             <p style="text-align: justify;"> Ontology Alignment is an essential tool for interoperability and semantic data integration, but most works in the field are restricted to finding simple correspondences.</p>
 			      <p style="text-align: justify;"> Existing <a href="http://ceur-ws.org/Vol-2536/oaei19_paper3.pdf">lexical-based approaches</a> are limited to finding complex mappings where there is a lexical similarity between the entities, which is often not the case in real-world ontologies.</p>
+            <p style="text-align: justify;"> Existing <a href="http://ceur-ws.org/Vol-2788/oaei20_paper4.pdf">traditional Association Rule Mining based approaches </a> have a catch-all philosophy, exhaustively searching for frequent patterns and using predefined complex alignment patterns to filter the results a posteriori.</p>
           </div>
 
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <p style="text-align: justify;"> Existing <a href="http://ceur-ws.org/Vol-2788/oaei20_paper4.pdf">traditional Association Rule Mining based approaches </a> have a catch-all philosophy, exhaustively searching for frequent patterns and using predefined complex alignment patterns to filter the results a posteriori.</p>
-			      <p style="text-align: justify;"> We propose novel pattern mining based algorithms for targeted complex ontology alignment, where patterns are used <i>a priori</i>, to allow for a targeted Association Rule Mining process, which we have found to be:
-              <ol>
-              <li>more <b>effective</b>, as we optimise the search and selection of each pattern</li>
-              <li>more <b>efficient</b>, as we reduce the search space</li></ol>
-            </p>
+            <p style="text-align: justify;"> We propose novel pattern mining based algorithms for targeted complex ontology alignment, where patterns are used <i>a priori</i>, to allow for a targeted Association Rule Mining process, which we have found to be:</p>
+            <div class="row justify-content-center"> 
+              <div class="col-12">
+                <div class="faq-list2">
+                  <ul>
+                    <li data-aos="fade-up">
+                      <i class="bx bx-trending-up icon-help" style="font-size: 3em;"></i>
+                      <a> more <b>effective</b>, as we optimise the search and selection of each pattern</a> 
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="100">
+                      <i class="bx bx-filter icon-help" style="font-size: 3em;"></i> 
+                      <a> more <b>efficient</b>, as we reduce the search space</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -159,32 +174,34 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <h2>System</h2>
-        <div class="row justify-content-center">
-          <div class="col-8" >
-			      <span> text </span>
-          </div>
-        </div>
       </div>
 
       <div class="row content mycontainer">
         <img src="assets/img/pipeline.png" class="mimage">
         <div class="mmiddle1">
-          <div class="mtext1"> The loading step retrieves the set of shared individuals between the two ontologies and organises the ontology 
+          <div class="mtext1"> 
+            <p><b>External ontology loading system facilities (<a href="http://ceur-ws.org/Vol-2536/oaei19_paper3.pdf" target="_blank">AMLC</a>)</b></p>
+            The loading step retrieves the set of shared individuals between the two ontologies and organises the ontology 
             information (types, relations and property values of each individual, ranges and domains of the properties and hierarchical relations between classes) 
             in hash-tables.</div>
         </div>
         <div class="mmiddle2">
-          <div class="mtext2"> There are individual matchers dedicated to each of the complex alignment patterns, which search the hash-table data structures containing the relevant data for the targeted alignment pattern. <br></br>
+          <div class="mtext2"> 
+            <p><b>Matching algorithms</b></p>  
+          There are individual matchers dedicated to each of the complex alignment patterns, which search the hash-table data structures containing the relevant data for the targeted alignment pattern. <br></br>
           The support (or frequency) of the source and target entities that participate in the pattern are stored and a common Association Rule Mining matching algorithm is responsible for extracting association rules.
           </div>
         </div>
         <div class="mmiddle3">
           <div class="mtext3">
-            Refinement algorithms receive mappings generated by some of the pattern matching algorithms as input and refine those mappings, converting simple subsumption mappings into complex equivalence ones.
+            <p><b> Refinement algorithms</b></p>
+            These algorithms receive mappings generated by some of the pattern matching algorithms as input and refine those mappings, converting simple subsumption mappings into complex equivalence ones.
           </div>
         </div>
         <div class="mmiddle4">
-          <div class="mtext4">Filtering algorithms select which of the candidate mappings to include in the final alignment, 
+          <div class="mtext4">
+            <p><b>Filtering algorithms</b></p>
+            Different filters select which of the candidate mappings to include in the final alignment, 
             excluding redundant mappings and conflicting mappings with lower confidence. <br></br>
             An aggregator algorithm combines mappings for the same entity into a single mapping using logical operators, such as “AND” and “OR”. </div>
         </div>
@@ -197,9 +214,6 @@
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <h2>Evaluation</h2>
-        <div class="row justify-content-center">
-          <div class="col-8" > <span> text </span></div>
-        </div>
       </div>
 
       <div class="row">
@@ -210,11 +224,9 @@
               <img src="assets/img/oaei.jpeg" class="img-fluid">
             </div>
             <h4><a href="">Data</a></h4>
-            <p> text </p>
-            <p> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#GOKG"> See more <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a> </p>
-            <div id="GOKG" class="collapse">
-              <img src="assets/img/GO.png" class="img-fluid" alt="" style="padding-top:20px" width="550" height="550">
-            </div>
+            <p> We chose the Populated Conference dataset for the evaluation of the proposed algorithms, which is avail­able in the <a href="http://oaei.ontologymatching.org/2020/complex/">OAEI 2020 Complex track</a>. 
+            The dataset comprises five ontologies, from which we chose <i>cmt</i> and <i>conference</i> to align, given its richness in terms of complex patterns.
+            </p>
           </div>
         </div>
 
@@ -229,10 +241,10 @@
             </div>
   
             <h4><a href="">Manual scale</a></h4>
-            <p> text </p>
+            <p> We manually classified the resulting mappings according to a rating scale consisting of the following five categories with associated scores. </p>
             <p> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#GOKG"> See more <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a> </p>
             <div id="GOKG" class="collapse">
-              <img src="assets/img/GO.png" class="img-fluid" alt="" style="padding-top:20px" width="550" height="550">
+              <img src="assets/img/manual_scale.png" class="img-fluid" alt="" style="padding-top:20px" width="550" height="550">
             </div>
           </div>
         </div>
@@ -372,7 +384,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/authors/ProfCatia.jpg" class="img-fluid" alt="">
+                <img src="assets/img/authors/Catia_Pesquita.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://scholar.google.com/citations?user=8nGYegMAAAAJ&hl"><i class="bi bi-google"></i></a>
                   <a href="https://twitter.com/CPesquita"><i class="bi bi-twitter"></i></a>
